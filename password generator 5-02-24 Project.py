@@ -66,7 +66,7 @@ def main():
             #temp stores the missing criteria
             temp = left.rfind((m[i]))
 
-            #if there's a miss it's, stored as -1. And a match is stored as 1, so we go through the missing criteria fill them and replace them with 1, to ensure that criteria is not visited again unless it's missing.
+            #if there's a miss it's, stored as -1. We go through the missing criteria fill them and replace them, to ensure that criteria is not visited again unless it's missing.
             if(temp == -1):
                 #creating re to go to a random point in the password and change it 
                 re = rand.randint(0, len(password)-1)
