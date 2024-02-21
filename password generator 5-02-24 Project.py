@@ -1,17 +1,20 @@
 import random as rand
 
+#this func returns the password after adding a lower case character at random
 def lowc(password):
     lower = "abcdefghijklmnopqrstuvwxyz"
     x = rand.randint(0,len(lower)-1)
     password += lower[x]
     return password
 
+#this func returns the password after adding a upper case character at random
 def upc(password):
     upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     x = rand.randint(0,len(upper)-1)
     password += upper[x]
     return password
 
+#this func returns the password after adding a special character at random
 def spc(password):
     special = ["(","~","!", "@","#","$","%","^","&","*","_","-","+","=","`","|","(",")","{","}","[","]",":",";","<>",".","?","/",")",'"']
     x = rand.randint(0,len(special)-1)
@@ -46,7 +49,7 @@ def main():
        else:
             password = numc(password)
             left+=str(x)
-    print (password)
+    #
     m = "1234"
     
 
@@ -54,10 +57,8 @@ def main():
     for j in range (len(password)):
         print(left)
         for i in range(len(m)):
-        
-        #print(m[i])
             temp = left.rfind((m[i]))
-            #print(temp)
+            
             if(temp == -1):
                 re = rand.randint(0, len(password)-1)
                 if int(m[i]) == 1 :
@@ -75,24 +76,8 @@ def main():
                     left = left.replace(left[re],"4",1) 
                 j = 0
               
-        
-                    
-                
-                
+    print(password)  
 
-    print(password)
-            #It's working, debbug and polish it
-            
-        #pass
-        #have one of each letter, number, special character
-        #make it random selection
-        #standard password have an upper and lower case letter
-# create the flags and check which method it has to go, then replace, consider the other conditions might become false after replacing, must stay within set size
-#maybe better to do it in the main for, make sure each of the criteria is at least met once
-#I could let it go through each criteria and then scramble the word
-#use a boolean flag, and store the selection, to keep track the missing character
-#best to do it after, and then replace and scramble       
-    
 if __name__ == "__main__":
     main()
 
