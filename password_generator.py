@@ -86,7 +86,7 @@ def main():
                 #setting j to zero, to go through the password again, to ensure no criteria is missing.
                 j = 0
     #prints the password     
-    print(password)  
+    print("Password: ",password)  
 
 if __name__ == "__main__":
     main()
